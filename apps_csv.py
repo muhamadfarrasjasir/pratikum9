@@ -17,7 +17,7 @@ def show_menu():
     print("[0] Exit")
     print("------------------------")
     selected_menu = input("Pilih menu> ")
-
+    
     if(selected_menu == "1"):
         show_contact()
     elif(selected_menu == "2"):
@@ -64,13 +64,13 @@ def create_contact():
     with open(csv_filename, mode='a') as csv_file:
         fieldnames = ['NO', 'NAMA', 'TELEPON']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-
+        
         no = input("No urut: ")
         nama = input("Nama lengkap: ")
         telepon = input("No. Telepon: ")
 
         writer.writerow({'NO': no, 'NAMA': nama, 'TELEPON': telepon})    
-
+    
     back_to_menu()
 
 
@@ -92,7 +92,7 @@ def search_concat():
     for data in contacts:
         if (data['NO'] == no):
             data_found = contacts[indeks]
-
+            
         indeks = indeks + 1
 
     if len(data_found) > 0:
@@ -102,7 +102,7 @@ def search_concat():
     else:
         print("Tidak ada data ditemukan")
     back_to_menu()
-
+    
 
 
 def edit_contact():
